@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#f6f9f7">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="财富仪表盘">
-<title>储蓄成长仪表盘 · Product V1.0</title>
+<title>正在暴富中 · Building My Wealth</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" href="favicon-32.png">
@@ -446,20 +446,131 @@ input,textarea,.yearSelect{background:#fbfdfc}
 @media(min-width:650px){.onboardingWrap{align-items:center}}
 
 </style>
+
+<style id="product-v11-theme">
+:root{
+  --bg:#f7f5f1;
+  --card:#ffffff;
+  --text:#17171c;
+  --muted:#7b8189;
+  --line:#ebe9e4;
+  --blue:#279b88;
+  --green:#279b88;
+  --red:#e66f7a;
+  --orange:#e79a62;
+  --pink:#efa9a6;
+  --pink-soft:#fbe9e6;
+  --green-soft:#e8f4f0;
+  --cream:#fbf6ee;
+  --shadow:0 10px 30px rgba(35,42,40,.065);
+}
+body{background:var(--bg);color:var(--text)}
+.wrap{max-width:980px}
+header{align-items:center}
+h1{font-size:30px;letter-spacing:.02em;color:#111216}
+.brandEn{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#8a8f95;margin-top:2px}
+header .sub{margin-top:9px;color:#727980}
+.productTag{color:#247e70;background:var(--green-soft);border-color:#d8ebe5}
+.card{border-color:var(--line);box-shadow:var(--shadow)}
+.btn{border-color:var(--line);background:#fff;color:var(--text)}
+.btn.primary{background:#279b88;border-color:#279b88;color:#fff}
+input,textarea,.yearSelect{border-color:var(--line);background:#fdfcf9}
+input:focus,textarea:focus{border-color:#70b9ac;box-shadow:0 0 0 3px rgba(39,155,136,.10)}
+.small{background:var(--green-soft);color:#247e70}
+
+/* Goal is the first and strongest action, but avoids flooding the screen with green. */
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:24px;
+  background:linear-gradient(135deg,#fbe5e2 0%,#fbefea 48%,#eef7f3 100%);
+  color:var(--text);
+  border:1px solid #f2dfdc;
+  box-shadow:0 14px 34px rgba(74,62,58,.08);
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  width:180px;height:180px;border-radius:50%;
+  right:-65px;top:-70px;
+  background:rgba(39,155,136,.09);
+  pointer-events:none;
+}
+.hero .label,.hero .hint{color:#6e706f}
+.heroTopLine{position:relative;z-index:1}
+.heroTopLine .iconBadge{background:rgba(239,169,166,.20);color:#dc7377}
+.heroTopLine .iconBadge .icon{color:#dc7377}
+.goalFirstTag{
+  margin-left:auto;
+  background:#fff;
+  color:#d66f73;
+  border:1px solid #f2cfcc;
+  padding:5px 9px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:800;
+}
+.heroGoalButton{
+  position:relative;z-index:1;
+  display:flex;align-items:flex-end;gap:12px;
+  border:0;background:transparent;padding:0;margin:7px 0 12px;
+  text-align:left;color:inherit;
+}
+.heroValue{color:#111216;font-size:clamp(48px,13vw,66px);margin:6px 0 0}
+.heroEditHint{font-size:12px;color:#247e70;font-weight:800;padding-bottom:7px}
+.heroMeta{position:relative;z-index:1;color:#656c69}
+.heroMeta strong{color:#168a77}
+.hero .bar{position:relative;z-index:1;background:rgba(255,255,255,.72);border:1px solid rgba(39,155,136,.08)}
+.hero .bar span{background:linear-gradient(90deg,#279b88,#65b7a7)}
+.heroInfoGrid{position:relative;z-index:1;border-top-color:rgba(70,84,78,.12)}
+.heroInfoItem+.heroInfoItem{border-left-color:rgba(70,84,78,.12)}
+.heroInfoHead{color:#777d7a}
+.heroInfoHead .iconBadge{background:rgba(255,255,255,.62);color:#279b88}
+.heroInfoValue{color:#17171c}
+.heroInfoSub{color:#858b88}
+.heroInfoLink{color:#17171c}
+
+/* Supporting colors: green for growth/action, blush for consumption/status, cream for neutral areas. */
+.monthCurrent,.pos,.chartSummary strong{color:#168a77}
+.badge.running{background:#fff0e8;color:#dc7f45}
+.badge.done{background:#e8f5f0;color:#168a77}
+.monthNote{background:#fbf7f1;border-color:#f0ebe3}
+.speedEta{background:#eef7f3}
+.yearHighlightItem:nth-child(1) .iconBadge{background:#fff2e8;color:#d88b52}
+.yearHighlightItem:nth-child(2) .iconBadge{background:#e8f5f0;color:#279b88}
+.yearHighlightItem:nth-child(3) .iconBadge{background:#fbe9e6;color:#df7c7e}
+.legendDot.start{background:#279b88}
+.legendDot.end{background:#efa9a6}
+.recordTable td.consume{color:#dc7f45}
+.neg{color:#df7078}
+.onboardingWrap{background:rgba(31,35,34,.42)}
+.onboarding{box-shadow:0 24px 70px rgba(39,50,46,.18)}
+.onboardingStep{background:#fbfaf7;border-color:#ece9e2}
+.onboardingNum{background:#279b88}
+.demoBanner button{background:#279b88}
+.emptyGuide{border-color:#b9dcd4;background:#f3faf7}
+.emptyGuide strong{color:#247e70}
+@media(max-width:560px){
+  .goalFirstTag{font-size:10px;padding:4px 7px}
+  .heroGoalButton{display:block}
+  .heroEditHint{padding:0 0 3px}
+}
+</style>
+
 </head>
 <body>
 <div class="wrap">
-<header><div><h1>财富仪表盘</h1><div class="sub">所有原始金额均由你手动填写，月末金额可后补</div></div><div class="updated" id="updated">尚未更新</div></header>
+<header><div><div class="brandLine"><div><h1>正在暴富中</h1><div class="brandEn">Building My Wealth</div></div></div><div class="sub">少记录 · 看增长 · 有目标 · 强反馈 · 低负担</div></div><div class="updated" id="updated">尚未更新</div></header>
 <div class="hero">
-<div class="heroTopLine"><span id="heroCoinsIcon"></span><div class="label">当前储蓄</div></div>
-<div class="heroValue" id="currentValue">0</div>
-<div class="heroMeta"><span>距离目标 <strong id="remainingValue">0</strong></span><span>·</span><span>完成 <strong id="rate">0%</strong></span></div>
+<div class="heroTopLine"><span id="heroFlagIcon"></span><div class="label">我的阶段目标</div><span class="goalFirstTag">第一步 · 先定目标</span></div>
+<button class="heroGoalButton" id="openTarget"><div class="heroValue" id="targetValue">0</div><div class="heroEditHint">设置 / 更新目标 ›</div></button>
+<div class="heroMeta"><span>已完成 <strong id="rate">0%</strong></span><span>·</span><span>距离目标还差 <strong id="remainingValue">0</strong></span></div>
 <div class="bar"><span id="bar"></span></div>
 <div class="heroInfoGrid">
   <div class="heroInfoItem">
-    <div class="heroInfoHead"><span id="heroFlagIcon"></span><span>当前阶段目标</span></div>
-    <button class="heroInfoLink" id="openTarget"><div class="heroInfoValue" id="targetValue">0</div></button>
-    <div class="heroInfoSub">点击设置 / 更新目标</div>
+    <div class="heroInfoHead"><span id="heroCoinsIcon"></span><span>当前储蓄</span></div>
+    <div class="heroInfoValue" id="currentValue">0</div>
+    <div class="heroInfoSub">最新储蓄快照</div>
   </div>
   <div class="heroInfoItem">
     <div class="heroInfoHead"><span id="heroTrophyIcon"></span><span>已达成目标</span></div>
@@ -536,10 +647,10 @@ input,textarea,.yearSelect{background:#fbfdfc}
 <div class="modalWrap" id="modal"><div class="modal"><h3>设置储蓄目标</h3><p>目标只影响进度计算，不会修改月度记录。</p><label for="targetInput">目标金额</label><input id="targetInput" type="number" min="0" step="0.01" inputmode="decimal" placeholder="请手动填写"><div class="formBtns"><button class="btn" id="closeModal">取消</button><button class="btn primary" id="saveTarget">保存目标</button></div></div></div>
 <div class="modalWrap" id="goalHistoryModal"><div class="modal"><h3>我的储蓄里程碑</h3><p>阶段目标达成后保留记录，再设置下一个目标。</p><div class="goalModalList" id="goalHistoryList"></div><div class="formBtns"><button class="btn" id="closeGoalHistory">关闭</button></div></div></div>
 <div class="onboardingWrap" id="productOnboarding"><div class="onboarding">
-<h2>开始记录你的储蓄成长</h2>
-<p>不用记录每一笔消费。每月只记录储蓄快照，就能看见财富是否真正增长。</p>
+<h2>欢迎来到「正在暴富中」</h2>
+<p>不记每一笔花销，只看自己的钱有没有越来越多。第一步，从一个阶段目标开始。</p>
 <div class="onboardingSteps">
-<div class="onboardingStep"><span class="onboardingNum">1</span><span>设置你的第一个阶段储蓄目标</span></div>
+<div class="onboardingStep"><span class="onboardingNum">1</span><span>先定下你的第一个阶段存钱目标</span></div>
 <div class="onboardingStep"><span class="onboardingNum">2</span><span>工资到账后，填写本月「月初储蓄」</span></div>
 <div class="onboardingStep"><span class="onboardingNum">3</span><span>月底补充「月末储蓄」，观察当月资金消耗</span></div>
 <div class="onboardingStep"><span class="onboardingNum">4</span><span>下个月继续记录，自动形成年度储蓄趋势</span></div>
@@ -569,7 +680,7 @@ const KEY="savings_growth_dashboard_product_v1",state={target:0,records:[],updat
 const money=n=>new Intl.NumberFormat("zh-CN",{maximumFractionDigits:2}).format(Number(n)||0),optionalNum=v=>{if(v===""||v===null||v===undefined)return null;const n=Number(v);return Number.isFinite(n)&&n>=0?n:null},monthText=m=>{const[y,mm]=m.split("-");return`${y}年${Number(mm)}月`},num=v=>{const n=Number(v);return Number.isFinite(n)&&n>=0?n:null},esc=s=>s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 function toast(t){$("toast").textContent=t;$("toast").classList.add("show");clearTimeout(window.tt);window.tt=setTimeout(()=>$("toast").classList.remove("show"),1800)}
 function load(){try{const d=JSON.parse(localStorage.getItem(KEY)||"null");if(!d)return;state.target=num(d.target)??0;state.records=Array.isArray(d.records)?d.records:[];state.updatedAt=d.updatedAt||null;state.goalHistory=Array.isArray(d.goalHistory)?d.goalHistory:[]}catch(e){toast("本地数据读取失败")}}
-function save(){if(productDemoMode)return;state.updatedAt=new Date().toISOString();localStorage.setItem(KEY,JSON.stringify({version:"Product 1.0",target:state.target,records:state.records,updatedAt:state.updatedAt,goalHistory:state.goalHistory}))}
+function save(){if(productDemoMode)return;state.updatedAt=new Date().toISOString();localStorage.setItem(KEY,JSON.stringify({version:"Product 1.1",target:state.target,records:state.records,updatedAt:state.updatedAt,goalHistory:state.goalHistory}))}
 function latest(){return[...state.records].sort((a,b)=>b.month.localeCompare(a.month))[0]||null}
 
 const ICONS={
@@ -729,7 +840,7 @@ function edit(m){const r=state.records.find(x=>x.month===m);if(!r)return;state.e
 function remove(m){if(!confirm(`确认删除 ${monthText(m)} 的记录吗？`))return;state.records=state.records.filter(r=>r.month!==m);if(state.editing===m)reset();save();render();toast("记录已删除")}
 $("form").onsubmit=e=>{e.preventDefault();const month=$("month").value,start=num($("start").value),end=optionalNum($("end").value),fund=num($("fund").value),note=$("note").value.trim();if(!month||start===null||fund===null)return toast("请填写月份、月初储蓄和公积金");if(state.records.some(r=>r.month===month&&r.month!==state.editing))return toast("该月份已存在，请编辑已有记录");const wasEditing=!!state.editing,r={month,start,end,fund,note};state.records=wasEditing?state.records.map(x=>x.month===state.editing?r:x):[...state.records,r];save();reset();render();toast(wasEditing?"记录已更新":"记录已保存")};
 $("cancelBtn").onclick=reset;$("openTarget").onclick=()=>{$("targetInput").value=state.target||"";$("modal").classList.add("open")};$("closeModal").onclick=()=>$("modal").classList.remove("open");$("saveTarget").onclick=()=>{const v=num($("targetInput").value);if(v===null)return toast("请输入有效目标金额");state.target=v;save();render();$("modal").classList.remove("open");toast("目标已保存")};$("modal").onclick=e=>{if(e.target===$("modal"))$("modal").classList.remove("open")};
-$("exportBtn").onclick=()=>{const blob=new Blob([JSON.stringify({app:"储蓄成长仪表盘",version:"Product 1.0",target:state.target,records:state.records,goalHistory:state.goalHistory,updatedAt:state.updatedAt},null,2)],{type:"application/json"}),u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download=`财富仪表盘备份-${new Date().toISOString().slice(0,10)}.json`;a.click();URL.revokeObjectURL(u);toast("数据已导出")};
+$("exportBtn").onclick=()=>{const blob=new Blob([JSON.stringify({app:"正在暴富中",version:"Product 1.1",target:state.target,records:state.records,goalHistory:state.goalHistory,updatedAt:state.updatedAt},null,2)],{type:"application/json"}),u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download=`正在暴富中-数据备份-${new Date().toISOString().slice(0,10)}.json`;a.click();URL.revokeObjectURL(u);toast("数据已导出")};
 $("importBtn").onclick=()=>$("fileInput").click();$("fileInput").onchange=async e=>{const f=e.target.files[0];e.target.value="";if(!f)return;try{const d=JSON.parse(await f.text());if(!Array.isArray(d.records))throw 0;const rec=d.records.map(r=>({month:String(r.month||""),start:num(r.start),end:optionalNum(r.end),fund:num(r.fund),note:typeof r.note==="string"?r.note:""}));if(rec.some(r=>!/^\d{4}-\d{2}$/.test(r.month)||r.start===null||r.fund===null)||new Set(rec.map(r=>r.month)).size!==rec.length)throw 0;if(!confirm("导入会覆盖当前浏览器中的全部数据，是否继续？"))return;state.target=num(d.target)??0;state.records=rec;state.goalHistory=Array.isArray(d.goalHistory)?d.goalHistory:[];save();reset();render();toast("数据导入成功")}catch{toast("导入失败：文件格式不正确")}};
 $("clearBtn").onclick=()=>{if(!confirm("确认清空全部月度记录吗？储蓄目标会保留。"))return;state.records=[];save();reset();render();toast("月度记录已清空")};window.addEventListener("resize",()=>{clearTimeout(window.chartResizeTimer);window.chartResizeTimer=setTimeout(drawTrendChart,120)});$("yearSelect").addEventListener("change",renderYearSummary);
 
